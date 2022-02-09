@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>응애!</title>
-</head>
+<html lang="ko">
+{% include 'head.html' %}
 <body>
-<h1>응애!</h1>
+
+
+{% include 'header.html' %}
+
+{%block content %}
+{% endblock %}
+<div style=" height : 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
+
+</div>
+
+{% include 'footer.html' %}
+
 </body>
 </html>
