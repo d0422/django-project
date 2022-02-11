@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="height : 20rem; border-style:solid; border-radius : 1rem; margin: 2rem; border-width: 1px;">
+<div style="height : 20rem; border-style:solid; border-radius : 1rem; margin: 2rem; text-align: center;">
+<h1 sylte="font-family: 'Playfair Display', serif;">
+    hello_world list!
+</h1>
+    <!--hello_world에다가 post메서드로 넘겨주기-->
+    <form action="/account/hello_world/" method="post">
+        <!--csrf_token을 생성해 줘야 제대로 넘어감 csrf는 장고 보안 토큰?으로 이해하면됨-->
+        {% csrf_token %}
+        <div>
+            <input type-="text", name="hello_word_input">
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="POST">
+        </div>
+    </form>
+    <!--hello_world_output이 있다면 html 태그를 만들어라.-->
+    {% if hello_world_list %}
+        {% for x in hello_world_list %}
+        <h1>
+            {{x.text}}
+        </h1>
+        {% endfor %}
+    {% endif %}
+
 </div>
 {% endblock %}
